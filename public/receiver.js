@@ -24,9 +24,9 @@ ws.onmessage = e => {
 
     setOffer(e.data);
 }
-const sendSdp = sdp => {
+const sendSdp = async sdp => {
     console.log('sendSdp', sdp)
-    waitWebSocketReady()
+    await waitWebSocketReady()
     ws.send(sdp.sdp)
 }
 const waitWebSocketReady = () => {
