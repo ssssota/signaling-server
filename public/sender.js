@@ -8,7 +8,8 @@ navigator.getUserMedia =    navigator.getUserMedia || navigator.mozGetUserMedia 
 
 let pc, dc
 
-const ws = new WebSocket('wss://signalingsv.herokuapp.com')
+const host = location.origin.replace(/^http/, 'ws')
+const ws = new WebSocket(host)
 ws.onopen = e => {
     console.log('ws onopen', e)
 }
@@ -32,9 +33,7 @@ const makeOffer = async () => {
     console.log('makeOffer')
     const config = {'iceServers': [
         {'urls': 'stun:stun.l.google.com:19302'},
-        {'urls': 'stun:stun1.l.google.com:19302'},
-        {'urls': 'stun:stun2.l.google.com:19302'},
-        {'urls': 'stun:stun3.l.google.com:19302'}
+        {'urls': 'stun:stun1.l.google.com:19302'}
     ]}
     pc = new webrtc.RTCPeerConnection(config)
 
