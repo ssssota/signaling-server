@@ -54,7 +54,7 @@ const makeOffer = async () => {
         dispLog('dc onclose', e)
     }
     dc.onmessage = e => {
-        dispLog('dc onmessage', e)
+        dispLog('dc onmessage', e, e.data)
     }
 
     pc.onicecandidate = e => {

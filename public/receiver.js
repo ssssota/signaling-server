@@ -57,7 +57,7 @@ const setOffer = async sdp => {
             dispLog('dc onclose', e)
         }
         dc.onmessage = e => {
-            dispLog('dc onmessage', e)
+            dispLog('dc onmessage', e, e.data)
         }
     }
 
