@@ -26,7 +26,16 @@ ws.onmessage = e => {
 }
 const sendSdp = sdp => {
     console.log('sendSdp', sdp)
+    waitWebSocketReady()
     ws.send(sdp.sdp)
+}
+const waitWebSocketReady = () => {
+    console.log('waitWebSocket')
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve((ws.readyState == 1)? ws.readyState: waitWebSocketReady())
+        }, 1000)
+    })
 }
 
 const makeOffer = async () => {
