@@ -7,12 +7,12 @@ const port = process.env.PORT || 8080
 
 app.use(express.static('public'))
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`HTTP server is listening. (localhost:${port})`)
 })
 
 // WebSocket server
-const wsServer = new webSocketServer({app})
+const wsServer = new webSocketServer({ server })
 console.log(`WebSocket server is listening. (localhost:${wsPort})`)
 
 wsServer.on('connection', ws => {
