@@ -8,7 +8,7 @@ navigator.getUserMedia =    navigator.getUserMedia || navigator.mozGetUserMedia 
 
 let pc, dc
 
-const ws = new WebSocket('ws://localhost:3001')
+const ws = new WebSocket('ws://localhost:3000')
 ws.onopen = e => {
     console.log('ws onopen', e)
 }
