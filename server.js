@@ -3,7 +3,7 @@ const webSocketServer = require('ws').Server
 
 // HTTP server
 const app = express()
-const port = process.env.port || 8080
+const port = process.env.PORT || 8080
 
 app.use(express.static('public'))
 
@@ -12,7 +12,7 @@ app.listen(port, () => {
 })
 
 // WebSocket server
-const wsPort = 3001
+const wsPort = 3000
 const wsServer = new webSocketServer({'port': wsPort})
 console.log(`WebSocket server is listening. (localhost:${wsPort})`)
 
