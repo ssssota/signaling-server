@@ -8,7 +8,7 @@ navigator.getUserMedia =    navigator.getUserMedia || navigator.mozGetUserMedia 
 
 let pc, dc
 
-const ws = new WebSocket('ws://localhost:3000')
+const ws = new WebSocket('ws://signalingsv.herokuapp.com')
 ws.onopen = e => {
     console.log('ws onopen', e)
 }
