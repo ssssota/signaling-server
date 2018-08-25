@@ -13,7 +13,7 @@ const server = app.listen(port, () => {
 
 // WebSocket server
 const wsServer = new webSocketServer({ server })
-console.log(`WebSocket server is listening. (localhost:${wsPort})`)
+console.log(`WebSocket server is listening.`)
 
 wsServer.on('connection', ws => {
     // console.log('ws onconnection')
