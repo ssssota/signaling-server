@@ -3,7 +3,7 @@ const webSocketServer = require('ws').Server
 
 // HTTP server
 const app = express()
-const port = 8080
+const port = process.env.port || 8080
 
 app.use(express.static('public'))
 
