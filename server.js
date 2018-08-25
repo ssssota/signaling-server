@@ -12,8 +12,7 @@ app.listen(port, () => {
 })
 
 // WebSocket server
-const wsPort = 3000
-const wsServer = new webSocketServer({'port': wsPort})
+const wsServer = new webSocketServer({app})
 console.log(`WebSocket server is listening. (localhost:${wsPort})`)
 
 wsServer.on('connection', ws => {
